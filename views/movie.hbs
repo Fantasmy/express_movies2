@@ -1,0 +1,9 @@
+<h1>Movie details</h1>
+<h2> {{movie.name}}</h2>
+<h2>{{movie.year}}</h2>
+{{#if user}} 
+<form method="POST" action="/{{movie._id}}/delete">
+    <button>delete</button>
+</form>
+{{/if}}
+<a href="/">Back</a>

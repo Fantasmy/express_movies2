@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header id="site-header">
+    <div class="container">
+      <h1>Movies</h1>
+      <nav>
+        <a href="/">Home</a>
+      </nav>
+    </div>
+    {{#if user}} 
+    <p> {{user.username}} </p>
+      <form method="POST" action="/auth/logout">
+        <button>Logout</button>
+      </form>
+
+      {{/if}}
+      {{#unless user}}
+      <a href="/auth/login">Log in</a>
+      <a href="/auth/signup">Sign-up</a>
+      {{/unless}}
+
+  </header>
+  <div class="container">
+    {{{body}}}
+  </div>
+
+  <footer id="site-footer">
+    <div class="container">
+      &copy; 2018 ironmovies
+    </div>
+  </footer>
+</body>
+
+</html>
